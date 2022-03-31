@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Webdev 6 - Javascript Basic</title>
+</head>
+<body>
+    <!-- ? WEEK 6 - JAVASCRIPT BASIC
+    * DEKLARASI VARIABEL
+    * ATURAN PENULISAN VARIABEL
+    * TIPE DATA
+    * OPERATOR ( ARITMATIKA, ASSIGNMENT, PERBANDINGAN, LOGIKA )
+    * PERCABANGAN ( IF-ELSE, TERNARY, NESTED )
+    * PERULANGAN ( FOR, WHILE, DO-WHILE )
+    * FUNGSI ( BIASA, EKSPRESI, ARROW ) -->
+
+    <h1>hello world</h1>
+
+    <button onclick="changeBackground()">Klik aku untuk ganti background</button>
+    <button onclick="changeColor()">Klik aku untuk ganti warna tulisan</button>
+    <button onClick="changeFontSize()">Klik aku untuk ganti ukuran tulisan</button>
+</body>
+<script>
+    // variabel dan aturan penulisan
+    let x = 2
+    var k = 'This is string'
+    const pi = 3.14
+
+    console.log(x,k,pi)
+
+    var namaLengkap = 'Gagah Aji Gunadi' // camelCase
+
+    // tipe data
+    //  string, integer, float, boolean, array, object
+    let helo = "ini string" // string
+    let y = 12 // integer
+    let phi = 3.14 // float
+    let isTrue = false // boolean
+    let isFalse = true // boolean
+    let buah = ['Pepaya', 'Apel'] // array, indeksnya mulai dari 0
+
+
+    console.log(buah[0])
+    console.log(buah[1])
+
+    let siswa = [["gagah", "aji"], "jauzy"]
+
+    console.log(siswa[0][1])
+
+    let buku = {
+        penulis: "Jauzy",
+        penerbit: "Informatika",
+        tahunTerbit: "2018"
+    }
+
+    console.log(buku['tahunTerbit'])
+
+    // operator
+    let a = 10
+    let b = 15
+    let hasil = a + b
+    let hasil1 = a - b
+    let hasil2 = a * b
+    let hasil3 = a / b
+    let hasil4 = a ** b
+    let hasil5 = b % a
+
+    console.log(hasil, hasil1, hasil2, hasil3, hasil4, hasil5)
+
+    let c = 5
+    console.log(c)
+    c += 5
+    console.log(c)
+    c *= 2
+    console.log(c)
+    c /= 2
+    console.log(c)
+    c **= 1
+    console.log(c)
+    c %= 5
+    console.log(c)
+
+    console.log(5 !== '5')
+
+    // percabangan
+    var totalBelanja = 10000
+
+    if (totalBelanja > 50000) {
+        console.log("Selamat anda mendapat hadiah")
+    } else if (totalBelanja > 25000 && totalBelanja <= 50000) {
+        console.log("Selamat anda mendapat diskon 50%")
+    } else {
+        console.log("Anda kurang beruntung")
+    }
+
+    // percabangan ternary
+    // condition ? true : false
+    var jwb = prompt("Apakah Jakarta ibu kota Indonesia?")
+    var jawaban = (jwb.toUpperCase()=="IYA") ? "Benar" : "Salah"
+    // if (jwb.toUpperCase() == "IYA") {
+    //     var jawaban = "Benar"
+    // } else {
+    //     var jawaban = "Salah"
+    // }
+
+    document.write('Jawaban anda:', jawaban)
+
+        /*
+            ini komen
+            multiline
+        */
+    // percabangan bersarang ( nested if )
+    
+    var total = 100
+    if (total > 90) {
+        if (total > 95) {
+            console.log("Nilai anda A")
+        } else {
+            console.log("Nilai anda AB")
+        }
+    } else {
+        console.log("Belajar lagi, nilai anda belum A atau AB")
+    }
+
+
+
+    // perulangan ( for, foreach, repeat ( counted ), while ( uncounted ))
+    for(let i = 0; i < 10; i++){
+        console.log("Nilai i :", i)
+    }
+    // while
+    var ulangi = confirm("Ulangi loop?")
+    var counter = 0 // 1, 2, 3
+    while(ulangi){
+        counter++
+        ulangi = confirm("Ulangi loop?") // ok, ok, cancel
+    }
+
+    console.log("Loop anda dilakukan sebanyak", counter, " kali")
+
+    // do-while
+    var ulang = confirm("Ulang?")
+    var count = 0
+    do{
+        count++
+        ulang = confirm("Ulang?")
+    } while(ulang)
+
+    console.log("Ulang sebanyak", count, " kali")
+
+    // fungsi
+    function changeBackground(){ // fungsi biasa
+        document.body.style.backgroundColor = "black"
+    }
+
+    // changeBackground() -> ini cara manggil fungsi
+
+    var changeColor = function(){ // fungsi dengan ekspresi
+        document.body.style.color = "green"
+    }
+
+    var changeFontSize = () => { // arrow function
+        document.body.style.fontSize = '3em'
+    }
+
+</script>
+</html>
